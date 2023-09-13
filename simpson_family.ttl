@@ -47,12 +47,31 @@ sim:Maggie rdf:type foaf:Person;
     fam:hasFather sim:Homer;
     fam:hasMother sim:Marge.
 
+# Blank nodes para representar avós
+_:grandparent1 rdf:type foaf:Person;
+    foaf:name "Abraham".
+
+_:grandparent2 rdf:type foaf:Person;
+    foaf:name "Mona".
+
+# Relações entre Maggie e seus avós
+sim:Maggie fam:hasGrandparent _:grandparent1, _:grandparent2.
+
+# Patty
+sim:Patty rdf:type foaf:Person;
+    foaf:name "Patty Bouvier".
+
+# Selma
+sim:Selma rdf:type foaf:Person;
+    foaf:name "Selma Bouvier".
+
+# Herb
+sim:Herb rdf:type foaf:Person;
+    foaf:name "Herb Powell".
+
 # Relationships
-sim:Homer fam:hasSpouse sim:Marge.
-sim:Marge fam:hasSpouse sim:Homer.
-sim:Homer fam:hasSon sim:Bart.
-sim:Homer fam:hasDaughter sim:Lisa.
-sim:Homer fam:hasDaughter sim:Maggie.
-sim:Marge fam:hasSon sim:Bart.
-sim:Marge fam:hasDaughter sim:Lisa.
-sim:Marge fam:hasDaughter sim:Maggie.
+sim:Lisa fam:hasAunt sim:Patty, sim:Selma;
+    fam:hasUncle sim:Herb.
+
+sim:Patty fam:isSisterOf sim:Selma.
+sim:Selma fam:isSisterOf sim:Patty.
