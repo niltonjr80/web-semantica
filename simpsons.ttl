@@ -75,3 +75,10 @@ sim:Lisa fam:hasAunt sim:Patty, sim:Selma;
 
 sim:Patty fam:isSisterOf sim:Selma.
 sim:Selma fam:isSisterOf sim:Patty.
+
+# Abraham
+sim:Abraham rdf:type foaf:Person;
+    foaf:name "Abraham Simpson".
+
+# Relationship
+sim:Marge fam:hasFatherInLaw sim:Abraham.
