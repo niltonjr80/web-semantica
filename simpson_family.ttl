@@ -1,0 +1,56 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix fam: <http://www.ifi.uio.no/IN3060/family#>.
+
+# Family
+fam:SimpsonFamily rdf:type fam:Family.
+
+# Members of the Simpson Family
+fam:HomerSimpson rdf:type foaf:Person;
+    foaf:name "Homer Simpson";
+    foaf:age "40"^^xsd:integer;
+    fam:hasFamilyMember fam:SimpsonFamily;
+    fam:hasSpouse fam:MargeBouvier;
+    fam:hasSon fam:BartSimpson;
+    fam:hasDaughter fam:LisaSimpson;
+    fam:hasDaughter fam:MaggieSimpson.
+
+fam:MargeBouvier rdf:type foaf:Person;
+    foaf:name "Marge Bouvier";
+    foaf:age "38"^^xsd:integer;
+    fam:hasFamilyMember fam:SimpsonFamily;
+    fam:hasSpouse fam:HomerSimpson;
+    fam:hasSon fam:BartSimpson;
+    fam:hasDaughter fam:LisaSimpson;
+    fam:hasDaughter fam:MaggieSimpson.
+
+fam:BartSimpson rdf:type foaf:Person;
+    foaf:name "Bart Simpson";
+    foaf:age "10"^^xsd:integer;
+    fam:hasFamilyMember fam:SimpsonFamily;
+    fam:hasFather fam:HomerSimpson;
+    fam:hasMother fam:MargeBouvier.
+
+fam:LisaSimpson rdf:type foaf:Person;
+    foaf:name "Lisa Simpson";
+    foaf:age "8"^^xsd:integer;
+    fam:hasFamilyMember fam:SimpsonFamily;
+    fam:hasFather fam:HomerSimpson;
+    fam:hasMother fam:MargeBouvier.
+
+fam:MaggieSimpson rdf:type foaf:Person;
+    foaf:name "Maggie Simpson";
+    foaf:age "1"^^xsd:integer;
+    fam:hasFamilyMember fam:SimpsonFamily;
+    fam:hasFather fam:HomerSimpson;
+    fam:hasMother fam:MargeBouvier.
+    
+# Relationships
+fam:HomerSimpson fam:hasSpouse fam:MargeBouvier.
+fam:MargeBouvier fam:hasSpouse fam:HomerSimpson.
+fam:HomerSimpson fam:hasSon fam:BartSimpson.
+fam:HomerSimpson fam:hasDaughter fam:LisaSimpson.
+fam:HomerSimpson fam:hasDaughter fam:MaggieSimpson.
+fam:MargeBouvier fam:hasSon fam:BartSimpson.
+fam:MargeBouvier fam:hasDaughter fam:LisaSimpson.
+fam:MargeBouvier fam:hasDaughter fam:MaggieSimpson.
