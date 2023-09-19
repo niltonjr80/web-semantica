@@ -1,4 +1,4 @@
-package com.simpsons;
+package br.com.niltonjr80.websemantica;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

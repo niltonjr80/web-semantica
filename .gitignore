@@ -5,29 +5,41 @@ mvnw
 mvnw.cmd
 release.properties
 *~
+
 # Logs
 *.log
 logs/
+
 # Arquivos de compilação Java
 *.class
+
 # Arquivos de compilação
 bin/
+build/
+.gradle/
+
 # Arquivos de configuração IDEA
 .idea/
+
 # Arquivos de compilação Eclipse
-bin/
 .settings/
 .project
 .classpath
 .metadata/
-# Dependências e arquivos de compilação do Gradle
-.gradle/
-build/
+
 # Arquivos de saída da IDE
 *.iml
 *.ipr
 *.iws
+
 # Arquivos temporários
 *.swp
+
 # Arquivos de configuração do Visual Studio Code
 .vscode/
+
+# Gradle Wrapper
+gradle-wrapper.jar
+gradle-wrapper.properties
+gradlew.bat
+gradlew
