@@ -6,6 +6,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.FileManager;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
 
 public class SparqlQueryEngine {
     public static void main(String[] args) {
@@ -15,23 +16,32 @@ public class SparqlQueryEngine {
         // Caminho para o arquivo RDF dos Simpsons
         String rdfFile = "src/main/resources/input/simpsons.ttl";
 
-         // Caminho para o arquivo de saída
-         String outputFile = "src/main/resources/output/output_exercise_1.txt";
+        // Caminho para o arquivo de saída
+        String outputFile = "src/main/resources/output/output_exercise_1.txt";
 
-        // Carregue o gráfico RDF dos Simpsons
-        Model model = ModelFactory.createDefaultModel();
-        FileManager.get().readModel(model, rdfFile, "TURTLE");
+        // Crie um fluxo de saída para o arquivo
+        try (OutputStream os = new FileOutputStream(outputFile)) {
+            PrintStream output = new PrintStream(os);
 
-        // Carregue a consulta SPARQL do arquivo
-        String sparqlQuery = FileManager.get().readWholeFileAsUTF8(sparqlQueryFile);
+            // Carregue o gráfico RDF dos Simpsons
+            Model model = ModelFactory.createDefaultModel();
+            FileManager.get().readModel(model, rdfFile, "TURTLE");
 
-        // Execute a consulta SPARQL
-        Query query = QueryFactory.create(sparqlQuery);
-        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
-            ResultSet results = qexec.execSelect();
+            // Carregue a consulta SPARQL do arquivo
+            String sparqlQuery = FileManager.get().readWholeFileAsUTF8(sparqlQueryFile);
 
-            // Exiba os resultados em forma de tabela
-            ResultSetFormatter.out(System.out, results, query);
+            // Execute a consulta SPARQL
+            Query query = QueryFactory.create(sparqlQuery);
+            try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+                ResultSet results = qexec.execSelect();
+
+                // Redirecione a saída para o arquivo
+                ResultSetFormatter.outputAsTSV(output, results);
+
+                System.out.println("Resultados da consulta SPARQL foram salvos em " + outputFile);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

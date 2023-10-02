@@ -1,0 +1,12 @@
+?person	?name
+_:B0c1b7b348709e4711721ee9ac3a10014	"Mona"
+_:Bc496bcd3778f2c6aa1f4b89a1d2374bb	"Abraham"
+<http://www.ifi.uio.no/IN3060/simpsons#Abraham>	"Abraham Simpson"
+<http://www.ifi.uio.no/IN3060/simpsons#Bart>	"Bart Simpson"
+<http://www.ifi.uio.no/IN3060/simpsons#Herb>	"Herb Powell"
+<http://www.ifi.uio.no/IN3060/simpsons#Homer>	"Homer Simpson"
+<http://www.ifi.uio.no/IN3060/simpsons#Lisa>	"Lisa Simpson"
+<http://www.ifi.uio.no/IN3060/simpsons#Maggie>	"Maggie Simpson"
+<http://www.ifi.uio.no/IN3060/simpsons#Marge>	"Marge Simpson"
+<http://www.ifi.uio.no/IN3060/simpsons#Patty>	"Patty Bouvier"
+<http://www.ifi.uio.no/IN3060/simpsons#Selma>	"Selma Bouvier"
