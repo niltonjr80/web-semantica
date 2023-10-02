@@ -1,7 +1,7 @@
 plugins {
     id 'application'
     id 'java'
-    //id 'org.jetbrains.kotlin.jvm' version '1.9.10'
+   
 }
 
 repositories {
@@ -9,7 +9,6 @@ repositories {
 }
 
 dependencies {
-   //implementation kotlin('stdlib')
     implementation 'org.apache.jena:jena-core:4.9.0'
     implementation 'org.apache.jena:apache-jena-libs:4.9.0'
     implementation 'org.apache.jena:jena-rdfpatch:4.9.0'
@@ -26,8 +25,8 @@ task runSparqlQueryEngine(type: JavaExec, dependsOn: 'classes') {
     main = 'br.com.niltonjr80.websemantica.SparqlQueryEngine'
     classpath = sourceSets.main.runtimeClasspath
 
-   /*  args = [
-        '/workspaces/web-semantica/rdf-simpsons/src/main/resources/input/exercise_3.rq',
-        '/workspaces/web-semantica/rdf-simpsons/src/main/resources/input/simpsons.ttl'
-    ] */
+     // Obtém os argumentos da linha de comando
+    if (project.hasProperty("args")) {
+        args = project.property("args").split(' ')
+    }
 }

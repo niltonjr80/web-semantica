@@ -10,35 +10,45 @@ import java.io.PrintStream;
 
 public class SparqlQueryEngine {
     public static void main(String[] args) {
+
+        if (args.length != 1) {
+            System.out.println("Uso: ./gradlew runSparqlQueryEngine --args=\"exercise_x\" (onde x é o numero do exercício)");
+            return;
+        }
+
+        // Nome do arquivo de entrada passado como argumento
+        String inputFileName = args[0];
+
         // Caminho para o arquivo de consulta SPARQL
-        String sparqlQueryFile = "src/main/resources/input/exercise_1.rq";
-        
+        String sparqlQueryFile = "src/main/resources/input/" + inputFileName + ".rq";
+
         // Caminho para o arquivo RDF dos Simpsons
         String rdfFile = "src/main/resources/input/simpsons.ttl";
 
         // Caminho para o arquivo de saída
-        String outputFile = "src/main/resources/output/output_exercise_1.txt";
+        String outputFile = "src/main/resources/output/output_" + inputFileName + ".txt";
 
-        // Crie um fluxo de saída para o arquivo
+        // Criando um fluxo de saída para o arquivo
         try (OutputStream os = new FileOutputStream(outputFile)) {
             PrintStream output = new PrintStream(os);
 
-            // Carregue o gráfico RDF dos Simpsons
+            // Redirecionnando a saída padrão para o arquivo e o console
+            System.setOut(output);
+
+            // Carregando o gráfico RDF dos Simpsons
             Model model = ModelFactory.createDefaultModel();
             FileManager.get().readModel(model, rdfFile, "TURTLE");
 
-            // Carregue a consulta SPARQL do arquivo
+            // Carregando a consulta SPARQL do arquivo
             String sparqlQuery = FileManager.get().readWholeFileAsUTF8(sparqlQueryFile);
 
-            // Execute a consulta SPARQL
+            // Executando a consulta SPARQL
             Query query = QueryFactory.create(sparqlQuery);
             try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
                 ResultSet results = qexec.execSelect();
 
-                // Redirecione a saída para o arquivo
-                ResultSetFormatter.outputAsTSV(output, results);
-
-                System.out.println("Resultados da consulta SPARQL foram salvos em " + outputFile);
+                // Exibindo os resultados em forma de tabela
+                ResultSetFormatter.out(System.out, results, query);               
             }
         } catch (Exception e) {
             e.printStackTrace();
