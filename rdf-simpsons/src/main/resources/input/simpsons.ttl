@@ -57,6 +57,18 @@ _:grandparent2 rdf:type foaf:Person;
 # Relações entre Maggie e seus avós
 sim:Maggie fam:hasGrandparent _:grandparent1, _:grandparent2.
 
+# Mona
+sim:Mona rdf:type foaf:PersonFemale;
+    foaf:name "Mona".
+
+# Relação mãe-filha entre Mona e Marge
+sim:Mona fam:hasChild sim:Marge.
+sim:Marge fam:hasMother sim:Mona.
+
+# Relação pai-filha entre Abraham e Mona
+sim:Abraham fam:hasChild sim:Mona.
+sim:Mona fam:hasFather sim:Abraham.
+
 # Patty
 sim:Patty rdf:type foaf:Person;
     foaf:name "Patty Bouvier".

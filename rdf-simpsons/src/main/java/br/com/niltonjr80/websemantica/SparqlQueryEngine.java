@@ -37,6 +37,7 @@ public class SparqlQueryEngine {
 
             // Carregando o gráfico RDF dos Simpsons
             Model model = ModelFactory.createDefaultModel();
+            //model.setNsPrefix("sim", "http://www.ifi.uio.no/IN3060/simpsons#");
             FileManager.get().readModel(model, rdfFile, "TURTLE");
 
             // Carregando a consulta SPARQL do arquivo
