@@ -75,10 +75,18 @@ sim:Lisa fam:hasAunt sim:Patty, sim:Selma;
 
 sim:Patty fam:isSisterOf sim:Selma.
 sim:Selma fam:isSisterOf sim:Patty.
+sim:Selma fam:isSisterOf sim:Marge.
+sim:Patty fam:isSisterOf sim:Marge.
+sim:Marge fam:isSisterOf sim:Selma.
+sim:Marge fam:isSisterOf sim:Patty.
 
 # Abraham
 sim:Abraham rdf:type foaf:Person;
     foaf:name "Abraham Simpson".
+
+# Relação pai-filho entre Abraham e Homer
+sim:Abraham fam:hasChild sim:Homer.
+sim:Homer fam:hasFather sim:Abraham.
 
 # Relationship
 sim:Marge fam:hasFatherInLaw sim:Abraham.
