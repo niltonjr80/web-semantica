@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:fam="http://www.ifi.uio.no/IN3060/family#"
+         xmlns:sim="http://www.ifi.uio.no/IN3060/simpsons#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <!-- Family -->
+  <fam:Family rdf:about="#SimpsonFamily"/>
+
+  <!-- Members of the Simpson Family -->
+  <foaf:Person rdf:about="#HomerSimpson">
+    <foaf:name>Homer Simpson</foaf:name>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">36</foaf:age>
+    <fam:hasFamilyMember rdf:resource="#SimpsonFamily"/>
+    <fam:hasSpouse rdf:resource="#MargeSimpson"/>
+    <fam:hasSon rdf:resource="#BartSimpson"/>
+    <fam:hasDaughter rdf:resource="#LisaSimpson"/>
+    <fam:hasDaughter rdf:resource="#MaggieSimpson"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#MargeSimpson">
+    <foaf:name>Marge Simpson</foaf:name>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">34</foaf:age>
+    <fam:hasFamilyMember rdf:resource="#SimpsonFamily"/>
+    <fam:hasSpouse rdf:resource="#HomerSimpson"/>
+    <fam:hasSon rdf:resource="#BartSimpson"/>
+    <fam:hasDaughter rdf:resource="#LisaSimpson"/>
+    <fam:hasDaughter rdf:resource="#MaggieSimpson"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#BartSimpson">
+    <foaf:name>Bart Simpson</foaf:name>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</foaf:age>
+    <fam:hasFamilyMember rdf:resource="#SimpsonFamily"/>
+    <fam:hasFather rdf:resource="#HomerSimpson"/>
+    <fam:hasMother rdf:resource="#MargeSimpson"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#LisaSimpson">
+    <foaf:name>Lisa Simpson</foaf:name>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</foaf:age>
+    <fam:hasFamilyMember rdf:resource="#SimpsonFamily"/>
+    <fam:hasFather rdf:resource="#HomerSimpson"/>
+    <fam:hasMother rdf:resource="#MargeSimpson"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#MaggieSimpson">
+    <foaf:name>Maggie Simpson</foaf:name>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</foaf:age>
+    <fam:hasFamilyMember rdf:resource="#SimpsonFamily"/>
+    <fam:hasFather rdf:resource="#HomerSimpson"/>
+    <fam:hasMother rdf:resource="#MargeSimpson"/>
+  </foaf:Person>
+
+  <!-- Grandparents -->
+  <foaf:Person rdf:about="#AbrahamSimpson">
+    <foaf:name>Abraham Simpson</foaf:name>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#MonaSimpson">
+    <foaf:name>Mona Simpson</foaf:name>
+  </foaf:Person>
+
+  <!-- Aunt and Uncle -->
+  <foaf:Person rdf:about="#PattyBouvier">
+    <foaf:name>Patty Bouvier</foaf:name>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#SelmaBouvier">
+    <foaf:name>Selma Bouvier</foaf:name>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#HerbPowell">
+    <foaf:name>Herb Powell</foaf:name>
+  </foaf:Person>
+
+  <!-- Relationships -->
+  <foaf:Person rdf:about="#LisaSimpson">
+    <fam:hasAunt rdf:resource="#PattyBouvier"/>
+    <fam:hasAunt rdf:resource="#SelmaBouvier"/>
+    <fam:hasUncle rdf:resource="#HerbPowell"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#PattyBouvier">
+    <fam:isSisterOf rdf:resource="#SelmaBouvier"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#SelmaBouvier">
+    <fam:isSisterOf rdf:resource="#PattyBouvier"/>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="#MargeSimpson">
+    <fam:hasFatherInLaw rdf:resource="#AbrahamSimpson"/>
+  </foaf:Person>
+
+</rdf:RDF>

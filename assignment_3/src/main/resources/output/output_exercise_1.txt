@@ -1,0 +1,15 @@
+-----------------------------------
+| person      | name              |
+===================================
+| _:b0        | "Abraham"         |
+| _:b1        | "Mona"            |
+| sim:Abraham | "Abraham Simpson" |
+| sim:Bart    | "Bart Simpson"    |
+| sim:Herb    | "Herb Powell"     |
+| sim:Homer   | "Homer Simpson"   |
+| sim:Lisa    | "Lisa Simpson"    |
+| sim:Maggie  | "Maggie Simpson"  |
+| sim:Marge   | "Marge Simpson"   |
+| sim:Patty   | "Patty Bouvier"   |
+| sim:Selma   | "Selma Bouvier"   |
+-----------------------------------

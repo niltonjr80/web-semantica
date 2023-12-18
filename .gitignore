@@ -43,3 +43,6 @@ gradle-wrapper.jar
 gradle-wrapper.properties
 gradlew.bat
 gradlew
+
+# Arquivos do apache-jena
+apache-jena-4.10.0

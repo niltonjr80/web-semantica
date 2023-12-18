@@ -1,0 +1,12 @@
+person,parent
+_:b0,
+_:b1,
+http://www.ifi.uio.no/IN3060/simpsons#Abraham,
+http://www.ifi.uio.no/IN3060/simpsons#Herb,
+http://www.ifi.uio.no/IN3060/simpsons#Marge,
+http://www.ifi.uio.no/IN3060/simpsons#Patty,
+http://www.ifi.uio.no/IN3060/simpsons#Selma,
+http://www.ifi.uio.no/IN3060/simpsons#Homer,http://www.ifi.uio.no/IN3060/simpsons#Abraham
+http://www.ifi.uio.no/IN3060/simpsons#Bart,http://www.ifi.uio.no/IN3060/simpsons#Homer
+http://www.ifi.uio.no/IN3060/simpsons#Lisa,http://www.ifi.uio.no/IN3060/simpsons#Homer
+http://www.ifi.uio.no/IN3060/simpsons#Maggie,http://www.ifi.uio.no/IN3060/simpsons#Homer

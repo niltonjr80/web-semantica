@@ -1,0 +1,19 @@
+plugins {
+    id 'application'
+    id 'java'
+   
+}
+
+application {
+    mainClassName = 'br.com.niltonjr80.websemantica.SparqlQueryEngine'
+}
+
+task runSparqlQueryEngine(type: JavaExec, dependsOn: 'classes') {
+    main = 'br.com.niltonjr80.websemantica.SparqlQueryEngine'
+    classpath = sourceSets.main.runtimeClasspath
+
+     // Obtém os argumentos da linha de comando
+    if (project.hasProperty("args")) {
+        args = project.property("args").split(' ')
+    }
+}

@@ -1,0 +1,75 @@
+@prefix fam:  <http://www.ifi.uio.no/IN3060/family#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sim:  <http://www.ifi.uio.no/IN3060/simpsons#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+sim:Herb  rdf:type     foaf:Person;
+        fam:hasFather  [] ;
+        foaf:name      "Herb Powell" .
+
+sim:Marge  rdf:type          foaf:Person;
+        fam:hasDaughter      sim:Maggie , sim:Lisa;
+        fam:hasFamilyMember  sim:SimpsonFamily;
+        fam:hasFatherInLaw   sim:Abraham;
+        fam:hasSon           sim:Bart;
+        fam:hasSpouse        sim:Homer;
+        foaf:age             "34"^^xsd:int;
+        foaf:name            "Marge Simpson" .
+
+sim:Homer  rdf:type          foaf:Person;
+        fam:hasDaughter      sim:Maggie , sim:Lisa;
+        fam:hasFamilyMember  sim:SimpsonFamily;
+        fam:hasSon           sim:Bart;
+        fam:hasSpouse        sim:Marge;
+        foaf:age             "36"^^xsd:int;
+        foaf:name            "Homer Simpson" .
+
+sim:Patty  rdf:type     foaf:Person;
+        fam:isSisterOf  sim:Selma;
+        foaf:name       "Patty Bouvier" .
+
+sim:Mona  rdf:type     foaf:Person;
+        fam:hasSpouse  sim:Abraham;
+        foaf:age       "70"^^xsd:int;
+        foaf:name      "Mona Simpson" .
+
+sim:Bart  rdf:type           foaf:Person;
+        fam:hasFamilyMember  sim:SimpsonFamily;
+        fam:hasFather        sim:Homer;
+        fam:hasMother        sim:Marge;
+        foaf:age             "10"^^xsd:int;
+        foaf:name            "Bart Simpson" .
+
+sim:Maggie  rdf:type         foaf:Person;
+        fam:hasFamilyMember  sim:SimpsonFamily;
+        fam:hasFather        sim:Homer;
+        fam:hasGrandparent   [ rdf:type   foaf:Person;
+                               foaf:name  "Mona"
+                             ];
+        fam:hasGrandparent   [ rdf:type   foaf:Person;
+                               foaf:name  "Abraham"
+                             ];
+        fam:hasMother        sim:Marge;
+        foaf:age             "1"^^xsd:int;
+        foaf:name            "Maggie Simpson" .
+
+sim:Lisa  rdf:type           foaf:Person;
+        fam:hasAunt          sim:Selma , sim:Patty;
+        fam:hasFamilyMember  sim:SimpsonFamily;
+        fam:hasFather        sim:Homer;
+        fam:hasMother        sim:Marge;
+        fam:hasUncle         sim:Herb;
+        foaf:age             "8"^^xsd:int;
+        foaf:name            "Lisa Simpson" .
+
+sim:Abraham  rdf:type  foaf:Person;
+        fam:hasSpouse  sim:Mona;
+        foaf:age       "78"^^xsd:int;
+        foaf:name      "Abraham Simpson" .
+
+sim:SimpsonFamily  rdf:type  fam:Family .
+
+sim:Selma  rdf:type     foaf:Person;
+        fam:isSisterOf  sim:Patty;
+        foaf:name       "Selma Bouvier" .
