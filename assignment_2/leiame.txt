@@ -3,3 +3,9 @@ javac -d bin -cp "src;D:/USP/web-semantica/apache-jena-4.10.0/lib/*" src/main/ja
 
 Linha de comando para executar:
 java -cp "bin;D:/USP/web-semantica/apache-jena-4.10.0/lib/*" br.com.niltonjr80.websemantica.Simpsons src/main/resources/input/simpsons.ttl src/main/resources/output/Simpsons-output.ttl
+
+Para simplificar, utilize os comandos:
+
+Compilar o Projeto: make build
+Executar o Projeto: make run
+Limpar o Projeto: make clean para remover os arquivos compilados.
