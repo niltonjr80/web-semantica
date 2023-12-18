@@ -1,0 +1,5 @@
+Linha de comando para compilar Simpsons.java:
+javac -d bin -cp "src;D:/USP/web-semantica/apache-jena-4.10.0/lib/*" src/main/java/br/com/niltonjr80/websemantica/Simpsons.java
+
+Linha de comando para executar:
+java -cp "bin;D:/USP/web-semantica/apache-jena-4.10.0/lib/*" br.com.niltonjr80.websemantica.Simpsons src/main/resources/input/simpsons.ttl src/main/resources/output/Simpsons-output.ttl
