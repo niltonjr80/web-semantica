@@ -4,6 +4,9 @@
 @prefix sim:  <http://www.ifi.uio.no/IN3060/simpsons#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-sim:Homer  foaf:knows  sim:Marge;
-        foaf:name    "Homer Simpson";
-        foaf:spouse  "Marge Simpson" .
+sim:Marge  rdf:type  foaf:Person;
+        foaf:name  "Marge Simpson" .
+
+sim:Homer  rdf:type  foaf:Person;
+        foaf:knows  sim:Marge;
+        foaf:name   "Homer Simpson" .

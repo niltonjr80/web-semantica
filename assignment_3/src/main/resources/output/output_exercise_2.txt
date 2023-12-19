@@ -1,15 +1,13 @@
------------------------------
-| person      | parent      |
-=============================
-| _:b0        |             |
-| _:b1        |             |
-| sim:Abraham |             |
-| sim:Herb    |             |
-| sim:Marge   |             |
-| sim:Patty   |             |
-| sim:Selma   |             |
-| sim:Homer   | sim:Abraham |
-| sim:Bart    | sim:Homer   |
-| sim:Lisa    | sim:Homer   |
-| sim:Maggie  | sim:Homer   |
------------------------------
+----------------------------
+| person     | parent      |
+============================
+| _:b0       | sim:Abraham |
+| _:b1       | sim:Abraham |
+| sim:Bart   | sim:Homer   |
+| sim:Lisa   | sim:Homer   |
+| sim:Maggie | sim:Homer   |
+| sim:Bart   | sim:Marge   |
+| sim:Lisa   | sim:Marge   |
+| sim:Maggie | sim:Marge   |
+| _:b2       | sim:Mona    |
+----------------------------

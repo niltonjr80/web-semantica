@@ -1,1 +1,1 @@
-Resultado da consulta ASK: false
+Result of ASK query: false
