@@ -1,8 +1,0 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX fam: <http://www.ifi.uio.no/IN3060/family#>
-PREFIX sim: <http://www.ifi.uio.no/IN3060/simpsons#>
-
-ASK WHERE {
-  sim:Herb fam:isSisterOf sim:Homer .
-}

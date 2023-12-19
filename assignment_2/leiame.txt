@@ -1,11 +1,7 @@
-Linha de comando para compilar Simpsons.java:
-javac -d bin -cp "src;D:/USP/web-semantica/apache-jena-4.10.0/lib/*" src/main/java/br/com/niltonjr80/websemantica/Simpsons.java
-
-Linha de comando para executar:
-java -cp "bin;D:/USP/web-semantica/apache-jena-4.10.0/lib/*" br.com.niltonjr80.websemantica.Simpsons src/main/resources/input/simpsons.ttl src/main/resources/output/Simpsons-output.ttl
-
-Para simplificar, utilize os comandos:
-
-Compilar o Projeto: make build
-Executar o Projeto: make run
-Limpar o Projeto: make clean para remover os arquivos compilados.
+Use *make build_simpsons* para compilar o projeto principal.
+Use *make build_convert* para compilar o conversor RDF.
+Use *make run* para executar o programa principal.
+Para executar com um arquivo de entrada diferente:
+    make run INPUT="arquivo.ttl"
+Use *make convert* para executar a conversão do RDF.
+Use *make clean* para limpar os arquivos compilados.

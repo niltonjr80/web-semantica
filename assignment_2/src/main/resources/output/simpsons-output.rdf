@@ -1,0 +1,104 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:fam="http://www.ifi.uio.no/IN3060/family#"
+    xmlns:sim="http://www.ifi.uio.no/IN3060/simpsons#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Patty">
+    <foaf:name>Patty Bouvier</foaf:name>
+    <fam:isSisterOf>
+      <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Selma">
+        <foaf:name>Selma Bouvier</foaf:name>
+        <fam:isSisterOf rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Patty"/>
+        <fam:isSisterOf>
+          <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Marge">
+            <fam:isSisterOf rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Selma"/>
+            <foaf:name>Marge Simpson</foaf:name>
+            <fam:isSisterOf rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Patty"/>
+            <fam:hasFamilyMember>
+              <fam:Family rdf:about="http://www.ifi.uio.no/IN3060/simpsons#SimpsonFamily"/>
+            </fam:hasFamilyMember>
+            <fam:hasDaughter>
+              <fam:Infant rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Maggie">
+                <foaf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                <foaf:name>Maggie Simpson</foaf:name>
+                <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</foaf:age>
+                <fam:hasFamilyMember rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#SimpsonFamily"/>
+                <fam:hasFather>
+                  <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Homer">
+                    <foaf:name>Homer Simpson</foaf:name>
+                    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >36</foaf:age>
+                    <fam:hasFamilyMember rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#SimpsonFamily"/>
+                    <fam:hasSpouse rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Marge"/>
+                    <fam:hasSon>
+                      <fam:Minor rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Bart">
+                        <foaf:name>Bart Simpson</foaf:name>
+                        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >10</foaf:age>
+                        <fam:hasFamilyMember rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#SimpsonFamily"/>
+                        <fam:hasFather rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Homer"/>
+                        <fam:hasMother rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Marge"/>
+                        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                      </fam:Minor>
+                    </fam:hasSon>
+                    <fam:hasDaughter>
+                      <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Lisa">
+                        <fam:hasFather rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Homer"/>
+                        <rdf:type rdf:resource="http://www.ifi.uio.no/IN3060/family#Minor"/>
+                        <foaf:name>Lisa Simpson</foaf:name>
+                        <fam:hasAunt rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Selma"/>
+                        <fam:hasUncle>
+                          <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Herb">
+                            <fam:hasFather rdf:parseType="Resource">
+                            </fam:hasFather>
+                            <foaf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                            <foaf:name>Herb Powell</foaf:name>
+                          </foaf:Person>
+                        </fam:hasUncle>
+                        <fam:hasMother rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Marge"/>
+                        <fam:hasAunt rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Patty"/>
+                        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >8</foaf:age>
+                        <fam:hasFamilyMember rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#SimpsonFamily"/>
+                      </foaf:Person>
+                    </fam:hasDaughter>
+                    <fam:hasDaughter rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Maggie"/>
+                  </foaf:Person>
+                </fam:hasFather>
+                <fam:hasMother rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Marge"/>
+                <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+              </fam:Infant>
+            </fam:hasDaughter>
+            <fam:hasSpouse rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Homer"/>
+            <fam:hasDaughter rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Lisa"/>
+            <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >34</foaf:age>
+            <fam:hasSon rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Bart"/>
+            <fam:hasFatherInLaw>
+              <fam:Old rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Abraham">
+                <fam:hasSpouse>
+                  <foaf:Person rdf:about="http://www.ifi.uio.no/IN3060/simpsons#Mona">
+                    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >70</foaf:age>
+                    <foaf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                    <foaf:name>Mona Simpson</foaf:name>
+                    <fam:hasSpouse rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Abraham"/>
+                  </foaf:Person>
+                </fam:hasSpouse>
+                <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >78</foaf:age>
+                <foaf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                <foaf:name>Abraham Simpson</foaf:name>
+                <fam:hasChild rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Homer"/>
+                <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+              </fam:Old>
+            </fam:hasFatherInLaw>
+          </foaf:Person>
+        </fam:isSisterOf>
+      </foaf:Person>
+    </fam:isSisterOf>
+    <fam:isSisterOf rdf:resource="http://www.ifi.uio.no/IN3060/simpsons#Marge"/>
+  </foaf:Person>
+</rdf:RDF>

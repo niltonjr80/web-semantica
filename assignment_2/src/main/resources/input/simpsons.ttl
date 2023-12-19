@@ -47,27 +47,15 @@ sim:Maggie rdf:type foaf:Person;
     fam:hasFather sim:Homer;
     fam:hasMother sim:Marge.
 
-# Blank nodes para representar avós
-_:grandparent1 rdf:type foaf:Person;
-    foaf:name "Abraham".
-
-_:grandparent2 rdf:type foaf:Person;
-    foaf:name "Mona".
-
-# Relações entre Maggie e seus avós
-sim:Maggie fam:hasGrandparent _:grandparent1, _:grandparent2.
+# Abraham
+sim:Abraham rdf:type foaf:Person;
+    foaf:name "Abraham Simpson";
+    fam:hasChild sim:Homer.
 
 # Mona
-sim:Mona rdf:type foaf:PersonFemale;
-    foaf:name "Mona".
-
-# Relação mãe-filha entre Mona e Marge
-sim:Mona fam:hasChild sim:Marge.
-sim:Marge fam:hasMother sim:Mona.
-
-# Relação pai-filha entre Abraham e Mona
-sim:Abraham fam:hasChild sim:Mona.
-sim:Mona fam:hasFather sim:Abraham.
+sim:Mona rdf:type foaf:Person;
+    foaf:name "Mona Simpson";
+    fam:hasSpouse sim:Abraham.
 
 # Patty
 sim:Patty rdf:type foaf:Person;
@@ -85,20 +73,7 @@ sim:Herb rdf:type foaf:Person;
 sim:Lisa fam:hasAunt sim:Patty, sim:Selma;
     fam:hasUncle sim:Herb.
 
-sim:Patty fam:isSisterOf sim:Selma.
-sim:Selma fam:isSisterOf sim:Patty.
-sim:Selma fam:isSisterOf sim:Marge.
-sim:Patty fam:isSisterOf sim:Marge.
-sim:Marge fam:isSisterOf sim:Selma.
-sim:Marge fam:isSisterOf sim:Patty.
-
-# Abraham
-sim:Abraham rdf:type foaf:Person;
-    foaf:name "Abraham Simpson".
-
-# Relação pai-filho entre Abraham e Homer
-sim:Abraham fam:hasChild sim:Homer.
-sim:Homer fam:hasFather sim:Abraham.
-
-# Relationship
+sim:Patty fam:isSisterOf sim:Selma, sim:Marge.
+sim:Selma fam:isSisterOf sim:Patty, sim:Marge.
+sim:Marge fam:isSisterOf sim:Selma, sim:Patty.
 sim:Marge fam:hasFatherInLaw sim:Abraham.
